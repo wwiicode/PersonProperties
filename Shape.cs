@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
+
+
 public class Cuboid : TheAbstractPrototype.Shape
 {
     int itsLength;
@@ -46,20 +48,30 @@ public class Ellipse : TheAbstractPrototype.Shape
 {
     int longerRadii;
     int shorterRadii;
-    int PI;
-
-
-    public Ellipse(int r1, int r2, int pi, string getStringStuff) : base(getStringStuff)
+   
+    public Ellipse(int r1, int r2, string getStringStuff) : base(getStringStuff)
     {
         longerRadii = r1;
         shorterRadii = r2;
-        PI = pi;
     }
 
     public override double Area
     {
-        get { return longerRadii * shorterRadii * PI; }
+        get { return longerRadii * shorterRadii * Math.PI; }
+    }
+}
+
+public class Hexagon : TheAbstractPrototype.Shape
+{
+    int sideLength;
+
+    public Hexagon(int side, string getStringStuff) : base(getStringStuff)
+    {
+        sideLength = side;
     }
 
-
+    public override double Area
+    {
+        get { return (3 * Math.Sqrt(3) * Math.Pow(sideLength, 2)) / 2; }
+    }
 }

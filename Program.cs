@@ -1,6 +1,7 @@
 ﻿using TheAbstractPrototype;
 using System;
 
+
 namespace PersonProperties
 {
     class Person
@@ -51,16 +52,18 @@ namespace PersonProperties
             Console.Write("\n\n Below is the Shape area calculation stuff:\n ");
             Console.WriteLine("==================================================");
             //Shape stuff
-            Cuboid stuff = new Cuboid(5,4,3, "Show me how to capture this Square shape #1");
 
-            Trepezoid stuff2 = new Trepezoid(5, 4, 3, "The Area of Trepezoid is : ");
+            Shape[] shapes = {
+                new Cuboid(5,4,3, "Show me how to capture this Square shape #1"),
+                new Trepezoid(5, 4, 3, "The Area of Trepezoid is : "),
+                new Ellipse(5, 4,  "The Ellipse's area is: "),
+                new Hexagon(5, "About the Hexagon: ") 
+            };
 
-            Ellipse stuff3 = new Ellipse(5, 4, System.Math.PI, "The Ellipse's area is: ");
 
-
-            foreach(string s in Shape)
+            foreach(Shape lala in shapes)
             {
-                WriteLine("{0} ", s);
+                Console.WriteLine("{0} ", lala);
             }
 
             //Console.WriteLine("{0}\n{1}", stuff, stuff2);
